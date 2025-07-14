@@ -1,4 +1,4 @@
-from .models import Employee
+from .models import Employee, Leave
 
 employees = []
 
@@ -33,6 +33,39 @@ def delete_employee(name):
         return True
     return False
 
+
+leaves = []
+
+
+def request_leave(employee_name, start_date, end_date):
+    employee = get_employee(employee_name)
+    if employee:
+        leave = Leave(employee, start_date, end_date)
+        employee.leaves.append(leave)
+        leaves.append(leave)
+        return leave
+    return None
+
+
+def get_all_leaves():
+    return leaves
+
+
+def approve_leave(leave_id):
+    for leave in leaves:
+        if id(leave) == leave_id:
+            leave.status = "Approved"
+            return leave
+    return None
+
+
+def reject_leave(leave_id):
+    for leave in leaves:
+        if id(leave) == leave_id:
+            leave.status = "Rejected"
+            return leave
+    return None
+
 def main():
     while True:
         print("\n1. Create employee")
@@ -40,7 +73,11 @@ def main():
         print("3. View employee")
         print("4. Update employee")
         print("5. Delete employee")
-        print("6. Exit")
+        print("6. Request leave")
+        print("7. View all leave requests")
+        print("8. Approve leave")
+        print("9. Reject leave")
+        print("10. Exit")
 
         choice = input("Enter your choice: ")
 
@@ -75,6 +112,30 @@ def main():
             else:
                 print("Employee not found.")
         elif choice == "6":
+            employee_name = input("Enter your name: ")
+            start_date = input("Enter start date (YYYY-MM-DD): ")
+            end_date = input("Enter end date (YYYY-MM-DD): ")
+            request_leave(employee_name, start_date, end_date)
+            print("Leave requested successfully.")
+        elif choice == "7":
+            all_leaves = get_all_leaves()
+            for leave in all_leaves:
+                print(leave)
+        elif choice == "8":
+            all_leaves = get_all_leaves()
+            for i, leave in enumerate(all_leaves):
+                print(f"{i}. {leave}")
+            leave_index = int(input("Enter leave index to approve: "))
+            approve_leave(id(all_leaves[leave_index]))
+            print("Leave approved.")
+        elif choice == "9":
+            all_leaves = get_all_leaves()
+            for i, leave in enumerate(all_leaves):
+                print(f"{i}. {leave}")
+            leave_index = int(input("Enter leave index to reject: "))
+            reject_leave(id(all_leaves[leave_index]))
+            print("Leave rejected.")
+        elif choice == "10":
             break
         else:
             print("Invalid choice.")
