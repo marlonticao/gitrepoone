@@ -1,0 +1,26 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:views="clr-namespace:Hris.Avalonia.Views"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Hris.Avalonia.MainWindow"
+        Title="HRIS">
+    <Grid ColumnDefinitions="200, *">
+        <ListBox x:Name="NavigationListBox" Grid.Column="0" Margin="5" SelectionChanged="NavigationListBox_SelectionChanged">
+            <ListBoxItem Content="Personal Information"/>
+            <ListBoxItem Content="Family Background"/>
+            <ListBoxItem Content="Educational Background"/>
+            <ListBoxItem Content="Civil Service Eligibility"/>
+            <ListBoxItem Content="Work Experience"/>
+            <ListBoxItem Content="Voluntary Work"/>
+            <ListBoxItem Content="Learning and Development"/>
+            <ListBoxItem Content="Other Information"/>
+            <ListBoxItem Content="Questions"/>
+            <ListBoxItem Content="References"/>
+        </ListBox>
+        <ContentControl x:Name="MainContent" Grid.Column="1" Margin="5">
+            <views:PersonalInformationView/>
+        </ContentControl>
+    </Grid>
+</Window>

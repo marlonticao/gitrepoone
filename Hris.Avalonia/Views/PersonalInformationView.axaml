@@ -1,0 +1,54 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:Hris.Avalonia.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Hris.Avalonia.Views.PersonalInformationView"
+             x:DataType="vm:PersonalInformationViewModel">
+    <StackPanel Margin="10">
+        <TextBlock Text="Personal Information" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>
+        <Grid ColumnDefinitions="Auto, *" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Surname:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Surname}"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="First Name:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding FirstName}"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Middle Name:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding MiddleName}"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Name Extension:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding NameExtension}"/>
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="Date of Birth:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <DatePicker Grid.Row="4" Grid.Column="1" SelectedDate="{Binding DateOfBirth}"/>
+            <TextBlock Grid.Row="5" Grid.Column="0" Text="Height (m):" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Height}"/>
+            <TextBlock Grid.Row="6" Grid.Column="0" Text="Weight (kg):" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Weight}"/>
+            <TextBlock Grid.Row="7" Grid.Column="0" Text="Blood Type:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding BloodType}"/>
+            <TextBlock Grid.Row="8" Grid.Column="0" Text="GSIS ID No:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding GsisIdNo}"/>
+            <TextBlock Grid.Row="9" Grid.Column="0" Text="PAG-IBIG ID No:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding PagIbigIdNo}"/>
+            <TextBlock Grid.Row="10" Grid.Column="0" Text="PhilHealth No:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding PhilHealthNo}"/>
+            <TextBlock Grid.Row="11" Grid.Column="0" Text="SSS No:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding SssNo}"/>
+            <TextBlock Grid.Row="12" Grid.Column="0" Text="TIN No:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding TinNo}"/>
+            <TextBlock Grid.Row="13" Grid.Column="0" Text="Agency Employee No:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding AgencyEmployeeNo}"/>
+            <TextBlock Grid.Row="14" Grid.Column="0" Text="Citizenship:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding Citizenship}"/>
+            <TextBlock Grid.Row="15" Grid.Column="0" Text="Residential Address:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding ResidentialAddress}"/>
+            <TextBlock Grid.Row="16" Grid.Column="0" Text="Permanent Address:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding PermanentAddress}"/>
+            <TextBlock Grid.Row="17" Grid.Column="0" Text="Telephone No:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding TelephoneNo}"/>
+            <TextBlock Grid.Row="18" Grid.Column="0" Text="Mobile No:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding MobileNo}"/>
+            <TextBlock Grid.Row="19" Grid.Column="0" Text="Email Address:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox Grid.Row="19" Grid.Column="1" Text="{Binding EmailAddress}"/>
+        </Grid>
+    </StackPanel>
+</UserControl>
